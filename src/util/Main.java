@@ -20,5 +20,18 @@ public class Main {
         for (User user : service.searchByName("a")) {
             System.out.println(user.getName());
         }
+        System.out.println("\nPage 1 (page size = 2):");
+        for (User user : service.getUsersByPage(1, 2)) {
+            System.out.println(user.getName());
+        }
+        System.out.println("\nPage 2 (page size = 2):");
+        for (User user : service.getUsersByPage(2, 2)) {
+            System.out.println(user.getName());
+        }
+        System.out.println("\nActive Users:");
+        for (User user : service.getActiveUsers()) {
+            System.out.println(user.getName());
+        }
+
     }
 }
